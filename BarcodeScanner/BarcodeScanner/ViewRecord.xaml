@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BarcodeScanner.ViewRecord">
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar Placeholder="Search Record" x:Name="UserSearch"/>
+            <Button Text="View Record 2" x:Name="Find" BackgroundColor="#294a70" TextColor="White"  Clicked="Find_Clicked"/>
+            <Button Text="Connect With Server" Grid.Row="1" BackgroundColor="#294a70" x:Name="ConnectServer2" TextColor="White" Clicked="ConnectServer2_Clicked"/>
+
+            <ListView x:Name="MyView" HasUnevenRows="True" Footer="">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid RowDefinitions="Auto,Auto,Auto">
+                                <Label Grid.Row="1" Text="{Binding assettag}" TextColor="Black" ></Label>
+                                <Label Grid.Row="2" Text="{Binding assettype}" TextColor="Black" ></Label>
+                                <Label Grid.Row="3" Text="{Binding devicename}" TextColor="Black" ></Label>
+                                <!--<Label Grid.Row="4" Text="{Binding brand}" TextColor="Black" ></Label>
+                                <Label Grid.Row="5" Text="{Binding model}" TextColor="Black" ></Label>
+                                <Label Grid.Row="6" Text="{Binding sn}" TextColor="Black" ></Label>-->
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
